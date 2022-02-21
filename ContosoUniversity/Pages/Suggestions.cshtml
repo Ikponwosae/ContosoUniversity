@@ -1,0 +1,49 @@
+﻿@page
+@model ContosoUniversity.Pages.SuggestionsModel
+
+@{
+    ViewData["Title"] = "Suggestions";
+}
+
+<h1>Suggestions</h1>
+
+<h4>Your Suggestions are appreciated and anonymous even though name data is collected.</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Suggestions.LastName" class="control-label"></label>
+                <input asp-for="Suggestions.LastName" class="form-control" />
+                <span asp-validation-for="Suggestions.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Suggestions.FirstName" class="control-label"></label>
+                <input asp-for="Suggestions.FirstName" class="form-control" />
+                <span asp-validation-for="Suggestions.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Suggestions.EnterDate" class="control-label"></label>
+                <input asp-for="Suggestions.EnterDate" class="form-control" />
+                <span asp-validation-for="Suggestions.EnterDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Suggestions.Suggestion" class="control-label"></label>
+                <input asp-for="Suggestions.Suggestion" class="form-control" />
+                <span asp-validation-for="Suggestions.Suggestion" class="text-danger"></span>
+            </div>
+            <div class="form-group row mt-3">
+                <input type="submit" value="Add Suggestion" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@*<div>
+    <a asp-page="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
